@@ -1,63 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
 }
-body{
+
+body {
+    height: 100vh;
     background-color: rgb(255, 245, 234);
 }
-.game{
+
+.game {
     display: none;
 }
-.container{
-    height:400px;
+
+.container {
+    height: 400px;
     width: 400px;
-    border:2px solid red;
+    border: 2px solid red;
     position: absolute;
-    top:50%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
 }
-.box{
+
+.box {
     border: 2px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Mulish", sans-serif;
-    font-size: 100px;    
+    font-size: 100px;
     background-color: rgba(244, 200, 153, 0.683);
     cursor: pointer;
 
-    
+
 }
-.home{
+
+.home {
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
-.home .heading{
-    margin:5% 0;
+
+.home .heading {
+    margin: 5% 0;
     font-size: 100px;
     text-align: center;
-    font-family: "Abril Fatface", serif;    
+    font-family: "Abril Fatface", serif;
     font-weight: bold;
     color: rgb(196, 3, 3);
 
 }
 
-.symbol{
+.symbol {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:10%;
+    gap: 10%;
     font-family: "Mulish", sans-serif;
     font-size: 60px;
     font-weight: 700;
 }
-.select{
+
+.select {
     background-color: rgba(244, 200, 153, 0.683);
     height: 200px;
     width: 200px;
@@ -67,114 +77,141 @@ body{
     cursor: pointer;
     font-family: "Mulish", sans-serif;
     font-size: 100px;
-   
+
 }
-.select:hover{
-    background-color:rgba(193, 146, 97, 0.683) ;
+
+.select:hover {
+    background-color: rgba(193, 146, 97, 0.683);
 }
 
 @media screen and (max-width:900px) {
-    .home .heading{
+    .home .heading {
         font-size: 90px;
         margin: 120px 0;
     }
-    .symbol{
+
+    .symbol {
         font-size: 45px;
     }
-    .select{
+
+    .select {
         height: 150px;
         width: 150px;
-        font-size:90px ;
+        font-size: 90px;
     }
 }
+
 @media screen and (max-width:750px) {
-    .home .heading{
+    .home .heading {
         font-size: 80px;
     }
-    .symbol{
+
+    .symbol {
         font-size: 35px;
     }
-    .select{
+
+    .select {
         height: 110px;
         width: 110px;
         font-size: 80px;
     }
-    .container{
+
+    .container {
         height: 330px;
         width: 330px;
     }
-    .box{
+
+    .box {
         font-size: 60px;
     }
 }
+
 @media screen and (max-width:600px) {
-    .home .heading{
+    .home .heading {
         font-size: 65px;
     }
-    .symbol{
+
+    .symbol {
         font-size: 25px;
     }
-    .select{
+
+    .select {
         height: 100px;
         width: 100px;
         font-size: 70px;
     }
-    .container{
+
+    .container {
         height: 280px;
         width: 280px;
     }
 }
+
 @media screen and (max-width:400px) {
-    .home .heading{
+    .home .heading {
         font-size: 65px;
     }
-    .symbol{
+
+    .symbol {
+        height: 10%;
         font-size: 25px;
+        gap: 15%;
+        flex-direction: column;
     }
-    .select{
+
+    .select {
         height: 80px;
         width: 80px;
         font-size: 60px;
     }
-    .container{
+
+    .container {
         height: 160px;
         width: 160px;
     }
-    .box{
+
+    .box {
         font-size: 40px;
     }
 }
 
 @media screen and (min-width:1200px) {
-    .home .heading{
+    .home .heading {
         font-size: 120px;
     }
-    .symbol{
+
+    .symbol {
         font-size: 65px;
     }
-    .select{
+
+    .select {
         height: 250px;
         width: 250px;
         font-size: 110px;
     }
-    .container{
+
+    .container {
         height: 470px;
         width: 470px;
     }
 }
+
 @media screen and (min-width:1800px) {
-    .home .heading{
+    .home .heading {
         font-size: 150px;
     }
-    .symbol{
+
+    .symbol {
         font-size: 75px;
     }
-    .select{
+
+    .select {
         height: 350px;
         width: 350px;
         font-size: 130px;
     }
-    .container{
+
+    .container {
         height: 550px;
         width: 550px;
     }
