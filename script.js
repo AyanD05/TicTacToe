@@ -3,7 +3,7 @@ const X = document.getElementById("X");
 let home = document.getElementsByClassName("home")[0];
 let game = document.getElementsByClassName("game")[0];
 let boxes = document.getElementsByClassName("box");
-
+var enable=true;
 //To select symbol "O"
 O.onclick = function () {
     home.style.display = "none";
@@ -44,32 +44,35 @@ function clickX() {
     for (let index = 0; index < boxes.length; index++) {
         const element = boxes[index];
         element.onclick = () => {
-            if (element.innerHTML != "X" && element.innerHTML != "O") {
+            if(enable==true){
+                if (element.innerHTML != "X" && element.innerHTML != "O") {
 
-                element.innerHTML = "X";
-                let user_box_no = element.id.slice(-1);
-                arr_user.push(Number(user_box_no));
-                arr_user.sort();
-                if (arr_user.length > 2) {
-                    let check = winner(arr_user, "X");
-                    if (check == true) {
-
+                    element.innerHTML = "X";
+                    let user_box_no = element.id.slice(-1);
+                    arr_user.push(Number(user_box_no));
+                    arr_user.sort();
+                    if (arr_user.length > 2) {
+                        let check = winner(arr_user, "X");
+                        if (check == true) {
+    
+                            return
+                        }
+    
+                    }
+                    if (arr_user.length == 5) {
+                        draw()
                         return
                     }
-
+                    comp("O");
+    
+    
                 }
-                if (arr_user.length == 5) {
-                    draw()
-                    return
+                else {
+                    alert("Select a different section")
                 }
-                comp("O");
-
-
+    
             }
-            else {
-                alert("Select a different section")
-            }
-
+           
 
 
 
@@ -83,8 +86,9 @@ function clickX() {
 function clickO() {
     for (let index = 0; index < boxes.length; index++) {
         const element = boxes[index];
-
+        
         element.onclick = () => {
+            if(enable==true){
             if (element.innerHTML != "X" && element.innerHTML != "O") {
                 element.innerHTML = "O";
                 let user_box_no = element.id.slice(-1);
@@ -110,6 +114,8 @@ function clickO() {
             }
 
         }
+          
+        }
 
 
     }
@@ -121,13 +127,14 @@ function clickO() {
 //To insert symbol by computer
 let arr_comp = [];
 function comp(sym) {
+    enable=false;
     random = Math.floor(1 + Math.random() * 9);
     box_id = `box-${random}`;
 
 
     box = document.getElementById(box_id);
     if (box.innerText == "O" || box.innerText == "X") {
-        comp(sym)
+        comp(sym);
     }
     else {
         setTimeout(() => {
@@ -140,6 +147,7 @@ function comp(sym) {
                 winner(arr_comp, sym);
                 
             }
+            enable=true;
         }, 1000)
 
     }
